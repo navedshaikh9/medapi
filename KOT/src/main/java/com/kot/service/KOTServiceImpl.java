@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kot.binding.KOT;
+import com.kot.binding.KOTItem;
 import com.kot.repo.KOTRepository;
 
 
@@ -55,7 +56,38 @@ public class KOTServiceImpl implements KOTService {
 	
 	@Override
 	public String saveKOTs(List<KOT> kotList) {
-		kotRepo.saveAll(kotList);
+		for (KOT value : kotList) {
+			KOT kot = kotRepo.findByValue(value);
+            if (kot != null) {
+                // Update existing item
+            	kot.setKotId(value.getKotId());
+    			kot.setAccountId(value.getAccountId());
+    			kot.setOutletId(value.getOutletId());
+    			kot.setKotOrder(value.getKotOrder());
+    			kot.setOrderType(value.getOrderType());
+    			kot.setTotalPrice(value.getTotalPrice());
+    			kot.setComment(value.getComment());
+    			kot.setCreated(value.getCreated());
+    			kot.setTime(value.getTime());
+    			kot.setStatus(value.isStatus());
+
+    			kotRepo.save(kot);
+            } else {
+                // Create new item
+            	KOT newItem = new KOT();
+            	newItem.setKotId(value.getKotId());
+            	newItem.setAccountId(value.getAccountId());
+            	newItem.setOutletId(value.getOutletId());
+            	newItem.setKotOrder(value.getKotOrder());
+    			newItem.setOrderType(value.getOrderType());
+    			newItem.setTotalPrice(value.getTotalPrice());
+    			newItem.setComment(value.getComment());
+    			newItem.setCreated(value.getCreated());
+    			newItem.setTime(value.getTime());
+    			newItem.setStatus(value.isStatus());
+    			kotRepo.save(newItem);
+            }
+        }
 		return "success";
 	}
 
