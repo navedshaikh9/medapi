@@ -57,7 +57,33 @@ public class SaleItemServiceImpl implements SaleItemService {
 	
 	@Override
 	public String saveSaleItems(List<SaleItem> saleItemsList) {
-		saleItemRepo.saveAll(saleItemsList);
+		for (SaleItem value : saleItemsList) {
+			SaleItem saleItem = saleItemRepo.findByValue(value);
+            if (saleItem != null) {
+                // Update existing item
+            	saleItem.setAccountId(value.getAccountId());
+    			saleItem.setOutletId(value.getOutletId());
+    			saleItem.setSaleId(value.getSaleId());
+    			saleItem.setItemName(value.getItemName());
+    			saleItem.setQty(value.getQty());
+    			saleItem.setPrice(value.getPrice());
+    			saleItem.setItemTotal(value.getItemTotal());
+    			saleItem.setCreated(value.getCreated());
+    			saleItemRepo.save(saleItem);
+            } else {
+                // Create new item
+            	SaleItem newItem = new SaleItem();
+            	newItem.setAccountId(value.getAccountId());
+            	newItem.setOutletId(value.getOutletId());
+            	newItem.setSaleId(value.getSaleId());
+    			newItem.setItemName(value.getItemName());
+    			newItem.setQty(value.getQty());
+    			newItem.setPrice(value.getPrice());
+    			newItem.setItemTotal(value.getItemTotal());
+    			newItem.setCreated(value.getCreated());
+    			saleItemRepo.save(newItem);
+            }
+        }
 		return "success";
 	}
 

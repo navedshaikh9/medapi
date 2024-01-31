@@ -55,7 +55,45 @@ public class SaleServiceImpl implements SaleService {
 	
 	@Override
 	public String saveSales(List<Sale> saleList) {
-		saleRepo.saveAll(saleList);
+		
+	//	saleRepo.saveAll(saleList);
+		for (Sale value : saleList) {
+            Sale sale = saleRepo.findByValue(value);
+            if (sale != null) {
+                // Update existing item
+            	sale.setAccountId(value.getAccountId());
+    			sale.setOutletId(value.getOutletId());
+    			sale.setSaleId(value.getSaleId());
+    			sale.setSaleOrder(value.getSaleOrder());
+    			sale.setOrderType(value.getOrderType());
+    			sale.setPayMethod(value.getPayMethod());
+    			sale.setTotalAmt(value.getTotalAmt());
+    			sale.setDiscountAmt(value.getDiscountAmt());
+    			sale.setTaxPercent(value.getTaxPercent());
+    			sale.setGrandTotal(value.getGrandTotal());
+    			sale.setCreated(value.getCreated());
+    			sale.setTime(value.getTime());
+    			sale.setStatus(value.isStatus());
+                saleRepo.save(sale);
+            } else {
+                // Create new item
+            	Sale newItem = new Sale();
+            	newItem.setAccountId(value.getAccountId());
+            	newItem.setOutletId(value.getOutletId());
+            	newItem.setSaleId(value.getSaleId());
+            	newItem.setSaleOrder(value.getSaleOrder());
+            	newItem.setOrderType(value.getOrderType());
+            	newItem.setPayMethod(value.getPayMethod());
+            	newItem.setTotalAmt(value.getTotalAmt());
+            	newItem.setDiscountAmt(value.getDiscountAmt());
+            	newItem.setTaxPercent(value.getTaxPercent());
+            	newItem.setGrandTotal(value.getGrandTotal());
+    			newItem.setCreated(value.getCreated());
+    			newItem.setTime(value.getTime());
+    			newItem.setStatus(value.isStatus());
+                saleRepo.save(newItem);
+            }
+        }
 		return "success";
 	}
 
