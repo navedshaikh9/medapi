@@ -11,6 +11,7 @@ import com.sale.binding.Sale;
 public interface SaleRepository extends JpaRepository<Sale, Integer> {
 
 	List<Sale> findByAccountId(String accountId);
-	Sale findByValue(Sale value);
+	Sale findByAccountIdAndOutletIdAndSaleId(String accountId, String outletId, int SaleId);
+	
 	
 }

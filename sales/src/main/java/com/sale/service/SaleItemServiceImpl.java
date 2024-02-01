@@ -58,8 +58,8 @@ public class SaleItemServiceImpl implements SaleItemService {
 	@Override
 	public String saveSaleItems(List<SaleItem> saleItemsList) {
 		for (SaleItem value : saleItemsList) {
-			SaleItem saleItem = saleItemRepo.findByValue(value);
-            if (saleItem != null) {
+			SaleItem saleItem = saleItemRepo.findByAccountIdAndOutletIdAndSaleItemId(value.getAccountId(),value.getOutletId(),value.getSaleItemId());
+	        if (saleItem != null) {
                 // Update existing item
             	saleItem.setAccountId(value.getAccountId());
     			saleItem.setOutletId(value.getOutletId());
@@ -72,6 +72,7 @@ public class SaleItemServiceImpl implements SaleItemService {
     			saleItemRepo.save(saleItem);
             } else {
                 // Create new item
+            	System.out.println("5");
             	SaleItem newItem = new SaleItem();
             	newItem.setAccountId(value.getAccountId());
             	newItem.setOutletId(value.getOutletId());

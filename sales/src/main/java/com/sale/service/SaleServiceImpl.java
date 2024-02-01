@@ -58,7 +58,7 @@ public class SaleServiceImpl implements SaleService {
 		
 	//	saleRepo.saveAll(saleList);
 		for (Sale value : saleList) {
-            Sale sale = saleRepo.findByValue(value);
+            Sale sale = saleRepo.findByAccountIdAndOutletIdAndSaleId(value.getAccountId(),value.getOutletId(),value.getSaleId());
             if (sale != null) {
                 // Update existing item
             	sale.setAccountId(value.getAccountId());
