@@ -58,7 +58,7 @@ public class KOTItemServiceImpl implements KOTItemService {
 	@Override
 	public String saveKOTItems(List<KOTItem> kotItemsList) {
 		for (KOTItem value : kotItemsList) {
-			KOTItem kot_item = kotItemRepo.findByValue(value);
+			KOTItem kot_item = kotItemRepo.findByAccountIdAndOutletIdAndKotItemId(value.getAccountId(),value.getOutletId(),value.getKotItemId());
             if (kot_item != null) {
                 // Update existing item
             	kot_item.setAccountId(value.getAccountId());
@@ -74,18 +74,8 @@ public class KOTItemServiceImpl implements KOTItemService {
     			kotItemRepo.save(kot_item);
             } else {
                 // Create new item
-            	KOTItem newItem = new KOTItem();
-            	newItem.setAccountId(value.getAccountId());
-            	newItem.setOutletId(value.getOutletId());
-            	newItem.setKotId(value.getKotId());
-            	newItem.setItemName(value.getItemName());
-            	newItem.setQty(value.getQty());
-    			newItem.setPrice(value.getPrice());
-    			newItem.setItemTotal(value.getItemTotal());
-    			newItem.setStatus(value.isStatus());
-    			newItem.setCancelStatus(value.isCancelStatus());
-    			newItem.setCreated(value.getCreated());
-    			kotItemRepo.save(newItem);
+            
+    			kotItemRepo.save(value);
             }
         }
 		return "success";

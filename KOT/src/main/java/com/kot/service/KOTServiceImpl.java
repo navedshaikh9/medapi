@@ -57,7 +57,7 @@ public class KOTServiceImpl implements KOTService {
 	@Override
 	public String saveKOTs(List<KOT> kotList) {
 		for (KOT value : kotList) {
-			KOT kot = kotRepo.findByValue(value);
+			KOT kot = kotRepo.findByAccountIdAndOutletIdAndKotId(value.getAccountId(),value.getOutletId(),value.getKotId());
             if (kot != null) {
                 // Update existing item
             	kot.setKotId(value.getKotId());
@@ -73,19 +73,8 @@ public class KOTServiceImpl implements KOTService {
 
     			kotRepo.save(kot);
             } else {
-                // Create new item
-            	KOT newItem = new KOT();
-            	newItem.setKotId(value.getKotId());
-            	newItem.setAccountId(value.getAccountId());
-            	newItem.setOutletId(value.getOutletId());
-            	newItem.setKotOrder(value.getKotOrder());
-    			newItem.setOrderType(value.getOrderType());
-    			newItem.setTotalPrice(value.getTotalPrice());
-    			newItem.setComment(value.getComment());
-    			newItem.setCreated(value.getCreated());
-    			newItem.setTime(value.getTime());
-    			newItem.setStatus(value.isStatus());
-    			kotRepo.save(newItem);
+               
+    			kotRepo.save(value);
             }
         }
 		return "success";

@@ -13,5 +13,5 @@ import com.kot.binding.KOTItem;
 public interface KOTItemRepository extends JpaRepository<KOTItem, Integer> {
 
 	List<KOTItem> findByAccountId(String accountId);
-	KOTItem findByValue(KOTItem value);
+	KOTItem findByAccountIdAndOutletIdAndKotItemId(String accountId, String outletId, int kotItemId);
 }
