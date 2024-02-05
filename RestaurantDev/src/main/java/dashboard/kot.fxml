@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.KOTController">
+   <children>
+      <Pane layoutX="844.0" layoutY="5.0" prefHeight="640.0" prefWidth="440.0" style="-fx-border-color: #EAECEE; -fx-background-color: #FFFFFF; -fx-border-radius: 5px;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="844.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <TableView fx:id="tbl_kot" editable="true" fixedCellSize="35.0" layoutX="3.0" layoutY="100.0" onKeyPressed="#sale_tbl_on_key_pressed" prefHeight="458.0" prefWidth="434.0">
+               <columns>
+                  <TableColumn fx:id="col_itemID" editable="false" minWidth="0.0" prefWidth="57.0" text="Id" visible="false" />
+                  <TableColumn fx:id="col_remove" editable="false" minWidth="0.0" prefWidth="30.0" text="Remove" />
+                  <TableColumn fx:id="col_ItemName" editable="false" prefWidth="150.0" resizable="false" text="Item Name" />
+                  <TableColumn fx:id="col_Qty" maxWidth="191.0" minWidth="0.0" prefWidth="96.0" resizable="false" text="Qty" />
+                  <TableColumn fx:id="col_ItemPrice" editable="false" maxWidth="179.0" minWidth="0.0" prefWidth="67.0" resizable="false" text="Price" />
+                  <TableColumn fx:id="col_total" editable="false" maxWidth="179.0" minWidth="0.0" prefWidth="82.0" resizable="false" text="Total" />
+               </columns>
+            </TableView>
+            <Pane layoutX="3.0" layoutY="98.0" prefHeight="30.0" prefWidth="434.0" style="-fx-background-color: #59A61F; -fx-background-radius: 5px 5px 0px 0px;">
+               <children>
+                  <Label layoutX="44.0" layoutY="6.0" prefHeight="20.0" prefWidth="100.0" text="Item Name" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="219.0" layoutY="4.0" prefHeight="20.0" prefWidth="33.0" text="Qty" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="294.0" layoutY="4.0" prefHeight="20.0" prefWidth="47.0" text="Price" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="365.0" layoutY="6.0" prefHeight="20.0" prefWidth="47.0" text="Total" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutY="1.0" prefHeight="30.0" prefWidth="440.0" style="-fx-background-color: #59A61F; -fx-background-radius: 5px;">
+               <children>
+                  <Label layoutX="16.0" layoutY="4.0" prefHeight="20.0" prefWidth="66.0" text="KOT No." textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_kot_no" layoutX="82.0" layoutY="5.0" prefHeight="20.0" prefWidth="74.0" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_created" alignment="CENTER" layoutX="329.0" layoutY="6.0" prefHeight="20.0" prefWidth="100.0" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label fx:id="lbl_order" alignment="CENTER" layoutX="14.0" layoutY="50.0" prefHeight="30.0" prefWidth="112.0" style="-fx-border-color: #EAECEE; -fx-border-radius: 5px;">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_order_type" alignment="CENTER" layoutX="135.0" layoutY="50.0" prefHeight="30.0" prefWidth="112.0" style="-fx-border-color: #EAECEE; -fx-border-radius: 5px;">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_total" alignment="CENTER" contentDisplay="CENTER" layoutX="275.0" layoutY="60.0" prefHeight="30.0" prefWidth="135.0" style="-fx-border-color: #EAECEE; -fx-border-radius: 5px;">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="285.0" layoutY="38.0" prefHeight="20.0" prefWidth="112.0" text="Total Amt">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="597.0" onAction="#btn_save" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #3b71ca;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="128.0" layoutY="597.0" onAction="#btn_print" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #3b71ca;" text="Print" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="242.0" layoutY="597.0" onAction="#btn_delete_kot" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: RED;" text="Cancle" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXRadioButton fx:id="radioBtnPlaced" alignment="CENTER_LEFT" contentDisplay="CENTER" layoutX="14.0" layoutY="568.0" onAction="#onRadioBtnActionPlaced" prefHeight="18.0" prefWidth="74.0" text="Placed">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="radioBtnPreparing" alignment="CENTER_LEFT" contentDisplay="CENTER" layoutX="98.0" layoutY="568.0" onAction="#onRadioBtnActionPreparing" prefHeight="18.0" prefWidth="100.0" text="Preparing">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="radioBtnReady" alignment="CENTER_LEFT" contentDisplay="CENTER" layoutX="214.0" layoutY="568.0" onAction="#onRadioBtnActionReady" prefHeight="18.0" prefWidth="74.0" text="Ready">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="radioBtnServed" alignment="CENTER_LEFT" contentDisplay="CENTER" layoutX="304.0" layoutY="568.0" onAction="#onRadioBtnActionServed" prefHeight="18.0" prefWidth="74.0" text="Served">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXRadioButton>
+         </children>
+      </Pane>
+      <ScrollPane hbarPolicy="NEVER" prefHeight="640.0" prefWidth="834.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #EAECEE; -fx-border-radius: 5px;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="461.0" AnchorPane.topAnchor="5.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+        </content>
+      </ScrollPane>
+      <TilePane fx:id="tile_kot_order" layoutX="14.0" layoutY="14.0" prefColumns="0" prefHeight="636.0" prefRows="0" prefWidth="834.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #EAECEE; -fx-border-radius: 5px;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="459.0" AnchorPane.topAnchor="5.0">
+         <padding>
+            <Insets left="5.0" top="5.0" />
+         </padding></TilePane>
+   </children>
+</AnchorPane>

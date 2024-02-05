@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="815.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reports.ReportsControllers">
+   <children>
+      <Pane layoutX="14.0" layoutY="75.0" prefHeight="176.0" prefWidth="788.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #D3D3D3; -fx-border-radius: 5px;">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="29.0" layoutY="118.0" onAction="#btnOnActionHotSaleItem" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #3b71ca;" text="Hot Sale Item" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="29.0" layoutY="73.0" onAction="#btnOnActionTax" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #3b71ca;" text="Tax" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="29.0" layoutY="26.0" onAction="#btnOnActionDineIn" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #3b71ca;" text="Dine-In" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="195.0" layoutY="26.0" onAction="#btnOnActionDelivery" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #3b71ca;" text="Delivery" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="195.0" layoutY="73.0" onAction="#btnOnActionDiscount" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #3b71ca;" text="Discount" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="366.0" layoutY="26.0" onAction="#btnOnActionTakeaway" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #3b71ca;" text="Takeaway" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="366.0" layoutY="73.0" onAction="#btnOnActionCancelItem" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #3b71ca;" text="Cancel Item" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="534.0" layoutY="26.0" onAction="#btnOnActionTotalSale" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #3b71ca;" text="Total Sale" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="534.0" layoutY="73.0" onAction="#btnOnActionCancelOrder" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #3b71ca;" text="Cancel Order" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="266.0" prefHeight="117.0" prefWidth="390.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #D3D3D3; -fx-border-radius: 5px;">
+         <children>
+            <ComboBox fx:id="chbOrderType" layoutX="23.0" layoutY="21.0" onMouseClicked="#OnMouseClickedOrderType" prefHeight="30.0" prefWidth="180.0" promptText="Select Order Type" />
+            <ComboBox fx:id="chbPayment" layoutX="23.0" layoutY="66.0" onMouseClicked="#OnMouseClickedPayment" prefHeight="30.0" prefWidth="180.0" promptText="Select Payment" />
+            <JFXButton buttonType="RAISED" layoutX="226.0" layoutY="21.0" onAction="#btnOnActionOnOrderDelivery" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #3b71ca;" text="Delivery" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="228.0" layoutY="67.0" onAction="#btnOnActionOnPayment" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #3b71ca;" text="Payment" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <DatePicker fx:id="dateFrom" layoutX="208.0" layoutY="31.0" prefHeight="30.0" prefWidth="150.0" promptText="From" />
+      <DatePicker fx:id="dateTo" layoutX="375.0" layoutY="31.0" prefHeight="30.0" prefWidth="150.0" promptText="To" />
+      <JFXButton buttonType="RAISED" layoutX="545.0" layoutY="31.0" onAction="#btnOnActionClear" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #3b71ca;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

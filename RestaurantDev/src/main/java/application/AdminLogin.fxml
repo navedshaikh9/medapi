@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminLoginController">
+   <center>
+      <AnchorPane fx:id="adminloginPane" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="192.0" layoutY="199.0" text="Admin Login" textFill="#36454f">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="173.0" layoutY="403.0" text="Powerd by@ MedResto" textFill="#36454f">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView fill="#abb2b9" glyphName="USER" layoutX="114.0" layoutY="258.0" size="25" />
+            <FontAwesomeIconView fill="#abb2b9" glyphName="LOCK" layoutX="114.0" layoutY="309.0" size="25" />
+            <Label fx:id="lbl_logo" alignment="CENTER" ellipsisString="" layoutX="182.0" layoutY="35.0" prefHeight="120.0" prefWidth="120.0" textFill="#59a61f">
+               <font>
+                  <Font name="Verdana Bold" size="40.0" />
+               </font>
+            </Label>
+            <Label layoutX="198.0" layoutY="167.0" text="MedResto" textFill="#36454f">
+               <font>
+                  <Font name="Verdana Bold" size="16.0" />
+               </font>
+            </Label>
+            <Hyperlink layoutX="181.0" layoutY="418.0" text="www.medresto.com">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Hyperlink>
+            <Button layoutX="468.0" mnemonicParsing="false" onAction="#btnXClose" prefHeight="17.0" prefWidth="22.0" style="-fx-background-color: #FFFFFF;" text="X" textFill="RED">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <JFXTextField fx:id="txtUsername" focusColor="#abb2b9" labelFloat="true" layoutX="144.0" layoutY="235.0" onKeyPressed="#on_key_pressed_user" prefHeight="25.0" prefWidth="195.0" promptText="Username" unFocusColor="#abb2b9">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="txtPassword" focusColor="#abb2b9" labelFloat="true" layoutX="145.0" layoutY="286.0" onAction="#onEnter" onKeyPressed="#on_key_pressed_pass" prefHeight="25.0" prefWidth="194.0" promptText="Password" unFocusColor="#abb2b9">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="192.0" layoutY="349.0" onAction="#btnsubmit" onKeyPressed="#btn_login_on_key_pressed" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #3b71ca;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>   
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

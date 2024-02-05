@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="403.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SettingsManagment.SettingController">
+   <children>
+      <Pane prefHeight="40.0" prefWidth="600.0" style="-fx-background-color: #59A61F;">
+         <children>
+            <Label layoutX="210.0" layoutY="10.0" text="Settings Managment" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <CheckBox fx:id="chbApplyTax" focusTraversable="false" layoutX="324.0" layoutY="92.0" mnemonicParsing="false" onAction="#chbApplyTaxAction" prefHeight="19.0" prefWidth="122.0" text="Apply Tax">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="chbOffer" focusTraversable="false" layoutX="324.0" layoutY="120.0" mnemonicParsing="false" onAction="#chbShowOffer" prefHeight="19.0" prefWidth="122.0" text="Apply Offer">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="chbAdditionalCharges" focusTraversable="false" layoutX="324.0" layoutY="63.0" mnemonicParsing="false" onAction="#chbAdditionalCharges" prefHeight="19.0" prefWidth="206.0" text="Apply Additional Charges">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="chb_bill_print" focusTraversable="false" layoutX="60.0" layoutY="63.0" mnemonicParsing="false" onAction="#chb_on_action_bill_prinnt" prefHeight="19.0" prefWidth="172.0" text="Bill Print">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="chb_kot_print" focusTraversable="false" layoutX="60.0" layoutY="92.0" mnemonicParsing="false" onAction="#chb_on_action_kot_print" prefHeight="19.0" prefWidth="181.0" text="KOT Print">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="chbCalculateWindow" focusTraversable="false" layoutX="60.0" layoutY="120.0" mnemonicParsing="false" onAction="#onActionChbCalculateWindow" prefHeight="19.0" prefWidth="152.0" text="Calculate Window">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="chbStockNotification" focusTraversable="false" layoutX="60.0" layoutY="150.0" mnemonicParsing="false" onAction="#onActionChbStockNotification" prefHeight="19.0" prefWidth="152.0" text="Stock Notification">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="chbCancelItemComment" focusTraversable="false" layoutX="324.0" layoutY="150.0" mnemonicParsing="false" onAction="#onActionChbCancelItemComment" prefHeight="19.0" prefWidth="253.0" text="Cancel Item Comment Window">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="chbPaymentQRCodeOnBill" focusTraversable="false" layoutX="60.0" layoutY="183.0" mnemonicParsing="false" onAction="#onActionChbPaymentQRCodeOnBill" prefHeight="19.0" prefWidth="206.0" text="Payment QR Code On Bill">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </CheckBox>
+   </children>
+</AnchorPane>

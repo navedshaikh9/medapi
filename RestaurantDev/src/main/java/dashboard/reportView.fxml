@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="paneReportView" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.ReportViewController">
+   <children>
+      <TableView fx:id="tblSales" layoutX="14.0" layoutY="11.0" onMouseClicked="#getSelectedRow" prefHeight="341.0" prefWidth="1269.0">
+         <columns>
+            <TableColumn fx:id="srNo" prefWidth="76.0" text="Sr. No." />
+            <TableColumn fx:id="col_billId" prefWidth="76.0" text="Bill No." />
+            <TableColumn fx:id="col_Order" prefWidth="114.0" text="Order" />
+            <TableColumn fx:id="col_order_type" prefWidth="123.0" text="Order Type" />
+            <TableColumn fx:id="col_TotalAmt" prefWidth="119.0" text="Total Amt" />
+            <TableColumn fx:id="col_TaxPercent" prefWidth="120.0" text="Tax Percent" />
+            <TableColumn fx:id="col_Discount" prefWidth="97.0" text="Discount" />
+            <TableColumn fx:id="col_GrandTotal" minWidth="0.0" prefWidth="155.0" text="Grand Total" />
+            <TableColumn fx:id="col_PayMethod" prefWidth="144.0" text="Pay Method" />
+            <TableColumn fx:id="col_Created" prefWidth="131.0" text="Created" />
+            <TableColumn fx:id="col_time" prefWidth="131.0" text="Time" />
+            <TableColumn fx:id="col_Stauts" prefWidth="131.0" text="Status" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Pane layoutX="16.0" layoutY="406.0" prefHeight="239.0" prefWidth="807.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #DCDCDC; -fx-border-radius: 5px;">
+         <effect>
+            <DropShadow height="10.0" offsetX="3.0" offsetY="3.0" radius="4.5" spread="0.2" width="10.0">
+               <color>
+                  <Color blue="0.8627451062202454" green="0.8627451062202454" red="0.8627451062202454" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <DatePicker fx:id="dateStart" layoutX="14.0" layoutY="16.0" prefHeight="30.0" promptText="Start Date" />
+            <DatePicker fx:id="dateEnd" layoutX="212.0" layoutY="16.0" prefHeight="30.0" promptText="End Date" />
+            <JFXButton buttonType="RAISED" layoutX="394.0" layoutY="16.0" onAction="#btn_print" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #3b71ca;" text="Print" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="510.0" layoutY="16.0" onAction="#btnOnActionDownloadReport" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #3b71ca;" text="Download Report" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="13.0" layoutY="63.0" onAction="#btn_today_report" prefHeight="30.0" prefWidth="185.0" style="-fx-background-color: #3b71ca;" text="Today's Report" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="209.0" layoutY="63.0" onAction="#btn_sale_report" prefHeight="30.0" prefWidth="185.0" style="-fx-background-color: #3b71ca;" text="Sale Report" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="405.0" layoutY="63.0" onAction="#btn_descount_report" prefHeight="30.0" prefWidth="185.0" style="-fx-background-color: #3b71ca;" text="Discount Report" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="600.0" layoutY="63.0" onAction="#btn_tax_report" prefHeight="30.0" prefWidth="185.0" style="-fx-background-color: #3b71ca;" text="Tax Report" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="405.0" layoutY="105.0" onAction="#btn_takeaway_report" prefHeight="30.0" prefWidth="185.0" style="-fx-background-color: #3b71ca;" text="Takeaway Report" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="209.0" layoutY="105.0" onAction="#btn_delivery_report" prefHeight="30.0" prefWidth="185.0" style="-fx-background-color: #3b71ca;" text="Delivery Report" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="13.0" layoutY="105.0" onAction="#btn_dine_in_report" prefHeight="30.0" prefWidth="185.0" style="-fx-background-color: #3b71ca;" text="Dine-In Report" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="362.0" prefHeight="37.0" prefWidth="1269.0" style="-fx-background-color: #59A61F; -fx-background-radius: 5px;">
+         <children>
+            <Label layoutX="14.0" layoutY="9.0" text="Total" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_total" layoutX="59.0" layoutY="9.0" prefHeight="20.0" prefWidth="186.0" text="0.0" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="255.0" layoutY="9.0" text="Total Tax" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_total_tax" layoutX="337.0" layoutY="9.0" prefHeight="20.0" prefWidth="150.0" text="0.0" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="515.0" layoutY="9.0" text="Total Discount" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_total_discount" layoutX="638.0" layoutY="9.0" prefHeight="20.0" prefWidth="150.0" text="0.0" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="804.0" layoutY="9.0" text="Grand Total" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_grand_total" layoutX="907.0" layoutY="9.0" prefHeight="20.0" prefWidth="273.0" text="0.0" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TableView fx:id="tblItem" layoutX="830.0" layoutY="406.0" prefHeight="239.0" prefWidth="452.0">
+        <columns>
+          <TableColumn fx:id="colItemSrNo" prefWidth="75.0" text="Sr. No." />
+          <TableColumn fx:id="colItemName" prefWidth="75.0" text="Item Name" />
+            <TableColumn fx:id="colItemPrice" prefWidth="75.0" text="Price" />
+            <TableColumn fx:id="colItemQty" prefWidth="75.0" text="Qty" />
+            <TableColumn fx:id="colItemTotal" prefWidth="75.0" text="Total" />
+            <TableColumn fx:id="colItemStatus" prefWidth="75.0" text="Status" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

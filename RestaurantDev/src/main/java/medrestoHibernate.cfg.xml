@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	
+	<hibernate-configuration>
+	
+	<session-factory>
+	
+	<!-- <property name="connection.driver_class">org.sqlite.JDBC</property>
+	<property name="connection.url">jdbc:sqlite:${user.home}</property>
+	<property name="dialect">org.hibernate.dialect.SQLiteDialect</property> 
+	
+	
+	<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+	<property name="connection.url">jdbc:mysql://localhost:3306/medresto</property>
+	<property name="connection.username">root</property>
+	<property name="connection.password"></property>
+	<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+	
+	<property name="connection.url">jdbc:mysql://68.178.153.117:3306/medresto</property>
+	-->
+	
+	<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+	<property name="connection.url">jdbc:mysql://medresto.com:3306/medresto</property>
+	<property name="connection.username">medresto</property>
+	<property name="connection.password">N@ved2999</property>
+	<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+	<property name="hbm2ddl.auto">update</property>
+	<mapping class="com.restaurant.Entity.User"/>
+	<mapping class="com.restaurant.Entity.UserPlan"/>
+	</session-factory>
+	
+	</hibernate-configuration>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	
+	<hibernate-configuration>
+	
+	<session-factory>
+	
+	<!-- <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
+    <property name="hibernate.connection.url">jdbc:sqlite:${databasePath}</property>
+	<property name="hibernate.dialect">org.hibernate.dialect.SQLiteDialect</property>
+	 
+	<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+	<property name="connection.url">jdbc:mysql://localhost:3306/database</property>
+	<property name="connection.username">root</property>
+	<property name="connection.password">root</property>
+	<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+	-->
+	<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+	<property name="connection.url">jdbc:mysql://localhost:3306/database</property>
+	<property name="connection.username">root</property>
+	<property name="connection.password">root</property>
+	<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+	<property name="hibernate.connection.autocommit">true</property>
+	<property name="hibernate.hbm2ddl.auto">update</property>
+	<mapping class="com.restaurant.Entity.Category"/>
+	<mapping class="com.restaurant.Entity.OrderType"/>
+	<mapping class="com.restaurant.Entity.MenuItem"/>
+	<mapping class="com.restaurant.Entity.Tax"/>
+	<mapping class="com.restaurant.Entity.Discount"/>
+	<mapping class="com.restaurant.Entity.HotelTable"/>
+	<mapping class="com.restaurant.Entity.SubCategory"/>
+	<mapping class="com.restaurant.Entity.Employee"/>
+	<mapping class="com.restaurant.Entity.Customer"/>
+	<mapping class="com.restaurant.Entity.PaymentMethod"/>
+	<mapping class="com.restaurant.Entity.BillFormate"/>
+	<mapping class="com.restaurant.Entity.Setting"/>
+	<mapping class="com.restaurant.Entity.AdditionalCharges"/>
+	<mapping class="com.restaurant.Entity.InventoryCaregory"/>
+	<mapping class="com.restaurant.Entity.Inventory"/>
+	<mapping class="com.restaurant.Entity.Recipe"/>
+	<mapping class="com.restaurant.Entity.Unit"/>
+	<mapping class="com.restaurant.Entity.Trial"/>
+	<mapping class="com.restaurant.Entity.KOT"/>
+	<mapping class="com.restaurant.Entity.KOTItem"/>
+	<mapping class="com.restaurant.Entity.Sale"/>
+	<mapping class="com.restaurant.Entity.SaleItem"/>
+	<mapping class="com.restaurant.Entity.EmpAccess"/>
+
+	</session-factory>
+	
+	</hibernate-configuration>

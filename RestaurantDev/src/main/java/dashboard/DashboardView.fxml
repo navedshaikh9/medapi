@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="paneDashboardView" prefHeight="655.0" prefWidth="1300.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.DashboardViewController">
+   <children>
+      <Pane layoutX="14.0" layoutY="273.0" prefHeight="368.0" prefWidth="542.0" style="-fx-background-color: #ffffff; -fx-border-color: #DCDCDC; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+         <children>
+            <PieChart fx:id="sale_pie_chart" layoutX="-1.0" layoutY="32.0" prefHeight="336.0" prefWidth="494.0" style="-fx-background-radius: 5px;" />
+            <DatePicker fx:id="pie_chart_start_date" focusTraversable="false" layoutX="51.0" layoutY="7.0" prefHeight="25.0" prefWidth="118.0" promptText="From" />
+            <DatePicker fx:id="pie_chart_end_date" focusTraversable="false" layoutX="186.0" layoutY="7.0" prefHeight="25.0" prefWidth="118.0" promptText="To" />
+            <JFXButton buttonType="RAISED" layoutX="315.0" layoutY="6.0" onAction="#btn_pie_chart_search" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #3b71ca;" text="Search" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="400.0" layoutY="6.0" onAction="#btnHotTenItem" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #3b71ca;" text="Hot Sale Item" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" height="10.0" offsetX="3.0" offsetY="3.0" radius="4.5" spread="0.2" width="10.0">
+               <color>
+                  <Color blue="0.8627451062202454" green="0.8627451062202454" red="0.8627451062202454" />
+               </color></DropShadow>
+         </effect>
+      </Pane>
+      <Pane layoutX="568.0" layoutY="273.0" prefHeight="368.0" prefWidth="542.0" style="-fx-background-color: #ffffff; -fx-border-color: #DCDCDC; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" height="10.0" offsetX="3.0" offsetY="3.0" radius="4.5" spread="0.2" width="10.0">
+               <color>
+                  <Color blue="0.8627451062202454" green="0.8627451062202454" red="0.8627451062202454" />
+               </color></DropShadow>
+         </effect>
+         <children>
+            <BarChart fx:id="bar_chart" layoutX="3.0" layoutY="33.0" prefHeight="328.0" prefWidth="506.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <DatePicker fx:id="bar_chart_start_date" focusTraversable="false" layoutX="86.0" layoutY="8.0" prefHeight="25.0" prefWidth="118.0" promptText="From" />
+            <DatePicker fx:id="bar_chart_end_date" focusTraversable="false" layoutX="224.0" layoutY="8.0" prefHeight="25.0" prefWidth="118.0" promptText="To" />
+            <JFXButton buttonType="RAISED" layoutX="351.0" layoutY="7.0" onAction="#btn_chart_search" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #3b71ca;" text="Search" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="115.0" prefWidth="272.0" style="-fx-border-color: #DCDCDC; -fx-border-radius: 5px; -fx-background-color: #ffffff; -fx-background-radius: 5px;">
+         <children>
+            <FontAwesomeIconView fill="#59a61f" glyphName="CUTLERY" layoutX="14.0" layoutY="56.0" size="45" text="" />
+            <Label fx:id="lbl_dine_in" alignment="CENTER" layoutX="61.0" layoutY="38.0" prefHeight="31.0" prefWidth="191.0" text="0">
+               <font>
+                  <Font name="Verdana" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="108.0" layoutY="5.0" text="Dine-In" textFill="GREY">
+               <font>
+                  <Font name="Verdana" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_dine_in_total" alignment="CENTER" layoutY="84.0" prefHeight="31.0" prefWidth="272.0" style="-fx-background-color: #59A61F; -fx-background-radius: 0px 0px 5px 5px;" text="0" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" height="10.0" offsetX="3.0" offsetY="3.0" radius="4.5" spread="0.2" width="10.0">
+               <color>
+                  <Color blue="0.8588235378265381" green="0.8588235378265381" red="0.8588235378265381" />
+               </color></DropShadow>
+         </effect>
+      </Pane>
+      <Pane layoutX="304.0" layoutY="14.0" prefHeight="115.0" prefWidth="272.0" style="-fx-border-color: #DCDCDC; -fx-border-radius: 5px; -fx-background-color: #ffffff; -fx-background-radius: 5px;">
+         <children>
+            <FontAwesomeIconView fill="#59a61f" glyphName="TRUCK" layoutX="7.0" layoutY="55.0" size="50" />
+            <Label fx:id="lbl_delivery" alignment="CENTER" layoutX="67.0" layoutY="38.0" prefHeight="31.0" prefWidth="191.0" text="0">
+               <font>
+                  <Font name="Verdana" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="105.0" layoutY="5.0" text="Delivery" textFill="GREY">
+               <font>
+                  <Font name="Verdana" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_delivery_total" alignment="CENTER" layoutY="84.0" prefHeight="31.0" prefWidth="272.0" style="-fx-background-color: #59A61F; -fx-background-radius: 0px 0px 5px 5px;" text="0" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" height="10.0" offsetX="3.0" offsetY="3.0" radius="4.5" spread="0.2" width="10.0">
+               <color>
+                  <Color blue="0.8627451062202454" green="0.8627451062202454" red="0.8627451062202454" />
+               </color></DropShadow>
+         </effect>
+      </Pane>
+      <Pane layoutX="595.0" layoutY="14.0" prefHeight="115.0" prefWidth="272.0" style="-fx-border-color: #DCDCDC; -fx-border-radius: 5px; -fx-background-color: #ffffff; -fx-background-radius: 5px;">
+         <children>
+            <FontAwesomeIconView fill="#59a61f" glyphName="SHOPPING_BAG" layoutX="14.0" layoutY="56.0" size="50" />
+            <Label fx:id="lbl_takeaway" alignment="CENTER" layoutX="67.0" layoutY="39.0" prefHeight="31.0" prefWidth="191.0" text="0">
+               <font>
+                  <Font name="Verdana" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="98.0" layoutY="5.0" text="Takeaway" textFill="GREY">
+               <font>
+                  <Font name="Verdana" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_takeaway_total" alignment="CENTER" layoutY="84.0" prefHeight="31.0" prefWidth="272.0" style="-fx-background-color: #59A61F; -fx-background-radius: 0px 0px 5px 5px;" text="0" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" offsetX="3.0" offsetY="3.0" spread="0.2">
+               <color>
+                  <Color blue="0.8627451062202454" green="0.8627451062202454" red="0.8627451062202454" />
+               </color></DropShadow>
+         </effect>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="143.0" prefHeight="115.0" prefWidth="272.0" style="-fx-border-color: #DCDCDC; -fx-border-radius: 5px; -fx-background-color: #ffffff; -fx-background-radius: 5px;">
+         <children>
+            <FontAwesomeIconView fill="#59a61f" glyphName="BAR_CHART" layoutX="14.0" layoutY="73.0" size="45" />
+            <Label fx:id="lbl_sale" alignment="CENTER" layoutX="72.0" layoutY="45.0" prefHeight="25.0" prefWidth="191.0" text="0">
+               <font>
+                  <Font name="Verdana" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="120.0" layoutY="5.0" text="Sale" textFill="GREY">
+               <font>
+                  <Font name="Verdana" size="15.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow height="10.0" offsetX="3.0" offsetY="3.0" radius="4.5" spread="0.2" width="10.0">
+               <color>
+                  <Color blue="0.8627451062202454" green="0.8627451062202454" red="0.8627451062202454" />
+               </color></DropShadow>
+         </effect>
+      </Pane>
+      <Pane layoutX="305.0" layoutY="143.0" prefHeight="115.0" prefWidth="272.0" style="-fx-border-color: #DCDCDC; -fx-border-radius: 5px; -fx-background-color: #ffffff; -fx-background-radius: 5px;">
+         <children>
+            <FontAwesomeIconView fill="#59a61f" glyphName="ENVELOPE" layoutX="14.0" layoutY="73.0" size="45" />
+            <Label fx:id="lbl_tax" alignment="CENTER" layoutX="68.0" layoutY="44.0" prefHeight="25.0" prefWidth="191.0" text="0">
+               <font>
+                  <Font name="Verdana" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="122.0" layoutY="5.0" text="Tax" textFill="GREY">
+               <font>
+                  <Font name="Verdana" size="15.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow height="10.0" offsetX="3.0" offsetY="3.0" radius="4.5" spread="0.2" width="10.0">
+               <color>
+                  <Color blue="0.8627451062202454" green="0.8627451062202454" red="0.8627451062202454" />
+               </color></DropShadow>
+         </effect>
+      </Pane>
+      <Pane layoutX="596.0" layoutY="143.0" prefHeight="115.0" prefWidth="272.0" style="-fx-border-color: #DCDCDC; -fx-border-radius: 5px; -fx-background-color: #ffffff; -fx-background-radius: 5px;">
+         <children>
+            <FontAwesomeIconView fill="#59a61f" glyphName="GIFT" layoutX="8.0" layoutY="78.0" size="60" />
+            <Label fx:id="lbl_discount" alignment="CENTER" layoutX="71.0" layoutY="45.0" prefHeight="25.0" prefWidth="191.0" text="0">
+               <font>
+                  <Font name="Verdana" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="103.0" layoutY="5.0" text="Discount" textFill="GREY">
+               <font>
+                  <Font name="Verdana" size="15.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow height="10.0" offsetX="3.0" offsetY="3.0" radius="4.5" spread="0.2" width="10.0">
+               <color>
+                  <Color blue="0.8627451062202454" green="0.8627451062202454" red="0.8627451062202454" />
+               </color></DropShadow>
+         </effect>
+      </Pane>
+      <Pane layoutX="880.0" layoutY="13.0" prefHeight="247.0" prefWidth="404.0" style="-fx-background-color: #ffffff; -fx-border-color: #DCDCDC; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" height="10.0" offsetX="3.0" offsetY="3.0" radius="4.5" spread="0.2" width="10.0">
+               <color>
+                  <Color blue="0.8627451062202454" green="0.8627451062202454" red="0.8627451062202454" />
+               </color></DropShadow>
+         </effect>
+         <children>
+            <Label fx:id="lbl_ip_address" alignment="CENTER" prefHeight="31.0" prefWidth="404.0" style="-fx-background-color: #59A61F; -fx-background-radius: 5px 5px 0px 0px;" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="1121.0" layoutY="273.0" prefHeight="368.0" prefWidth="163.0" style="-fx-background-color: #ffffff; -fx-border-color: #DCDCDC; -fx-border-radius: 5px; -fx-background-radius: 5px;">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" layoutX="5.0" layoutY="29.0" prefHeight="320.0" prefWidth="155.0" style="-fx-background-color: #FFFFFF;">
+               <content>
+                  <TilePane fx:id="tile_pane_payment" prefHeight="319.0" prefWidth="136.0" style="-fx-background-color: #ffffff;" />
+               </content>
+            </ScrollPane>
+            <Label alignment="CENTER" layoutY="-1.0" prefHeight="25.0" prefWidth="163.0" style="-fx-background-color: #59A61F; -fx-background-radius: 5px 5px 0px 0px;" text="Payment" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="15.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" height="10.0" offsetX="3.0" offsetY="3.0" radius="4.5" spread="0.2" width="10.0">
+               <color>
+                  <Color blue="0.8627451062202454" green="0.8627451062202454" red="0.8627451062202454" />
+               </color></DropShadow>
+         </effect>
+      </Pane>
+   </children>
+</Pane>

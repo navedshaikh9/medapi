@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="departmentPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Stock.UnitController">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #EAECEE; -fx-border-width: 0px 1px 0px 0px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane focusTraversable="true" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #59A61F; -fx-border-color: #EAECEE; -fx-border-width: 0px 0px 1px 0px;">
+               <children>
+                  <Label layoutX="51.0" layoutY="10.0" text="Unit Management" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <CheckBox fx:id="active" layoutX="41.0" layoutY="163.0" mnemonicParsing="false" onKeyPressed="#onKeyPressed" text="Status">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </CheckBox>
+            <Label layoutX="33.0" layoutY="116.0" text="*" textFill="#f80303">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtUnit" focusColor="#abb2b9" labelFloat="true" layoutX="44.0" layoutY="120.0" onKeyPressed="#onKeyPressed" prefHeight="25.0" prefWidth="195.0" promptText="Unit" unFocusColor="#abb2b9">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </Pane>
+      <TableView fx:id="tblUnit" focusTraversable="false" layoutX="257.0" layoutY="41.0" onKeyPressed="#onTableKeyPressed" onMouseClicked="#getSelectedRcord" prefHeight="279.0" prefWidth="438.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="257.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="41.0">
+        <columns>
+            <TableColumn fx:id="srNo" prefWidth="60.0" text="Sr. No." />
+          <TableColumn fx:id="col_id" prefWidth="60.0" text="Id" visible="false" />
+          <TableColumn fx:id="col_Unit" prefWidth="259.0" text="Unit Name" />
+            <TableColumn fx:id="col_active" prefWidth="117.0" text="Status" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="257.0" layoutY="340.0" onAction="#btnAdd" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #3b71ca;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="371.0" layoutY="340.0" onAction="#btnUpdate" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #3b71ca;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="485.0" layoutY="340.0" onAction="#btnDelete" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: RED;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
