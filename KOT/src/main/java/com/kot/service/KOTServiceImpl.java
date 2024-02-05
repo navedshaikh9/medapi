@@ -1,5 +1,6 @@
 package com.kot.service;
 
+import java.time.LocalDate;
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -84,6 +85,12 @@ public class KOTServiceImpl implements KOTService {
 	public List<KOT> getAllKOTsByAccountId(String accountId) {
 		
 		return kotRepo.findByAccountId(accountId);
+	}
+
+	@Override
+	public List<KOT> getAllKOTsByAccountId(String accountId, String outletId) {
+		// TODO Auto-generated method stub
+		return kotRepo.findByAccountIdAndOutletIdAndCreated(accountId, outletId, LocalDate.now());
 	}
 
 }

@@ -19,4 +19,6 @@ public interface SaleService {
 	public String saveSales(List<Sale> saleList);
 	
 	public List<Sale> getAllSalesByAccountId(String accountId);
+	
+	public List<Sale> getAllSalesByAccountId(String accountId, String outletId);
 }

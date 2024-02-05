@@ -19,4 +19,6 @@ public interface KOTService {
 	public String saveKOTs(List<KOT> kotList);
 	
 	public List<KOT> getAllKOTsByAccountId(String accountId);
+	
+	public List<KOT> getAllKOTsByAccountId(String accountId, String outletId);
 }

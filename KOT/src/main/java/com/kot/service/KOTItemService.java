@@ -20,4 +20,6 @@ public interface KOTItemService {
 	public String saveKOTItems(List<KOTItem> kotItemList);
 	
 	public List<KOTItem> getAllKOTItemsByAccountId(String accountId);
+	
+	public List<KOTItem> getAllKOTItemsByAccountId(String accountId, String outletId);
 }

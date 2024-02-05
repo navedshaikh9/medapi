@@ -43,5 +43,12 @@ public class KOTItemRestController {
 		return new ResponseEntity<>(allKOTItems,HttpStatus.OK);
 	}
 	
+	@GetMapping("/kotItems/{accountId}/{outletId}")
+	public ResponseEntity<List<KOTItem>> getAllKOTItems(@PathVariable String accountId,@PathVariable String outletId)
+	{
+		List<KOTItem> allKOTItems = kotItemService.getAllKOTItemsByAccountId(accountId, outletId);
+		return new ResponseEntity<>(allKOTItems,HttpStatus.OK);
+	}
+	
 	
 }

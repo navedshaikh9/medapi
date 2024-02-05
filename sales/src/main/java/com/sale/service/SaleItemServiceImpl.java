@@ -1,5 +1,6 @@
 package com.sale.service;
 
+import java.time.LocalDate;
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -71,18 +72,8 @@ public class SaleItemServiceImpl implements SaleItemService {
     			saleItem.setCreated(value.getCreated());
     			saleItemRepo.save(saleItem);
             } else {
-                // Create new item
-            	System.out.println("5");
-            	SaleItem newItem = new SaleItem();
-            	newItem.setAccountId(value.getAccountId());
-            	newItem.setOutletId(value.getOutletId());
-            	newItem.setSaleId(value.getSaleId());
-    			newItem.setItemName(value.getItemName());
-    			newItem.setQty(value.getQty());
-    			newItem.setPrice(value.getPrice());
-    			newItem.setItemTotal(value.getItemTotal());
-    			newItem.setCreated(value.getCreated());
-    			saleItemRepo.save(newItem);
+             	
+    			saleItemRepo.save(value);
             }
         }
 		return "success";
@@ -94,4 +85,11 @@ public class SaleItemServiceImpl implements SaleItemService {
 		return saleItemRepo.findByAccountId(accountId);
 	}
 
+	@Override
+	public List<SaleItem> getAllSaleItemsByAccountId(String accountId, String outletId) {
+		// TODO Auto-generated method stub
+		return saleItemRepo.findByAccountIdAndOutletIdAndCreated(accountId, outletId, LocalDate.now());
+	}
+
+	
 }

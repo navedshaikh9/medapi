@@ -1,8 +1,8 @@
 package com.sale.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
-import com.sale.binding.Sale;
 import com.sale.binding.SaleItem;
 
 
@@ -20,4 +20,8 @@ public interface SaleItemService {
 	public String saveSaleItems(List<SaleItem> saleItemList);
 	
 	public List<SaleItem> getAllSaleItemsByAccountId(String accountId);
+	
+	public List<SaleItem> getAllSaleItemsByAccountId(String accountId, String outletId);
+
+	
 }

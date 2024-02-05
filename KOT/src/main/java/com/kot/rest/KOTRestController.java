@@ -42,4 +42,11 @@ public class KOTRestController {
 		List<KOT> allSaleItems = kotService.getAllKOTsByAccountId(accountId);
 		return new ResponseEntity<>(allSaleItems,HttpStatus.OK);
 	}
+	
+	@GetMapping("/kots/{accountId}/{outletId}")
+	public ResponseEntity<List<KOT>> getAllKOTs(@PathVariable String accountId,@PathVariable String outletId)
+	{
+		List<KOT> allSaleItems = kotService.getAllKOTsByAccountId(accountId, outletId);
+		return new ResponseEntity<>(allSaleItems,HttpStatus.OK);
+	}
 }

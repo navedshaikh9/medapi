@@ -42,4 +42,11 @@ public class SaleItemRestController {
 		return new ResponseEntity<>(allSaleItems,HttpStatus.OK);
 	}
 	
+	@GetMapping("/saleItems/{accountId}/{outletId}")
+	public ResponseEntity<List<SaleItem>> getAllSaleItems(@PathVariable String accountId, @PathVariable String outletId)
+	{
+		List<SaleItem> allSaleItems = saleItemService.getAllSaleItemsByAccountId(accountId, outletId);
+		return new ResponseEntity<>(allSaleItems,HttpStatus.OK);
+	}
+	
 }

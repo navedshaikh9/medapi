@@ -43,6 +43,13 @@ public class SaleRestController {
 		return new ResponseEntity<>(allSaleItems,HttpStatus.OK);
 	}
 	
+	@GetMapping("/sales/{accountId}/{outletId}")
+	public ResponseEntity<List<Sale>> getAllKOTs(@PathVariable String accountId,@PathVariable String outletId)
+	{
+		List<Sale> allSaleItems = saleService.getAllSalesByAccountId(accountId, outletId);
+		return new ResponseEntity<>(allSaleItems,HttpStatus.OK);
+	}
+	
 	
 
 }
